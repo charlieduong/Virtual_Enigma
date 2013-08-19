@@ -14,8 +14,8 @@
 ;Next is setting the three rotors. The rotors go from 3 to 1. Just enter a single letter for each rotor to set it.
 ;Lastly is entering the message to encrypt it. NOTE!! The message should have no SPACES, that is because having spaces makes
 ;it easier to decrypt then just a string of letters. Also just like a typewriter there is no backspace a mistake is a mistake,
-;so you need to restart the message again. However if it’s one letter then it should be easy to figure out when decrypted.
-;Hit enter or the “.” key when done and the encrypted message should be underneath the original message. To write another message
+;so you need to restart the message again. However if itï¿½s one letter then it should be easy to figure out when decrypted.
+;Hit enter or the ï¿½.ï¿½ key when done and the encrypted message should be underneath the original message. To write another message
 ;press the space key to restart the whole process.
 
 ;NOW HOW DO WE DECRYPT A MESSAGE WE RECEIVED??
@@ -23,13 +23,13 @@
 ;That means you need to know what order of the letters were and what the three rotors were set to. Once all that data is inputted
 ;into machine, just type in the encrypted message and the result should be the original message.
 
-;LET’S DO A CONTROL TEST
+;LETï¿½S DO A CONTROL TEST
 ;Set the order of the letters to: ABCDEZGHIJRLMNOPQKSTUVWXYF. So F & Z are switched as well as R & K
 ;Next set the rotor 3 to: T, Set rotor 2 to: C, And Rotor 1 to: A
 ;Now the message will be: THEALLIESAREPLANNINGSOMETHINGINJUNE
 ;The encrypted message will be: AJQTGUJMNBTHOWLGLZRJCFXPSSNRPADIDKL
 ;Now to decrypt the message back to its original. Again, set the order of the letters to: ABCDEZGHIJRLMNOPQKSTUVWXYF and keep the
-rotors the same: T,C,A. Now input the encrypted message and it will return back the original message.
+;rotors the same: T,C,A. Now input the encrypted message and it will return back the original message.
 
 
 
@@ -52,24 +52,24 @@ revrot3		db "UWYGADFPVZBECKMTHXSLRINQOJ",0
 reflect		db "YRUHQSLDPXNGOKMIEBFZCWVJAT",0
 
 boardp		db "Would you like to switch letter on the board, if so press space: ",0
-b1p			db "Enter the letter you wish to change the path too: ",0
-b2p			db "This letter will go to which letter: ",0
+b1p		db "Enter the letter you wish to change the path too: ",0
+b2p		db "This letter will go to which letter: ",0
 
 ui1prompt	db "Please enter a characters FROM A-Z: UP TO 100",0
 ui1echo		db "You entered this character: ",0
 
 decryptindex	dd	0
 
-b1			db	0	;breadboard input one
-b2			db  0	;breadboard input two
-b3			db  0   ;to go again to switch letters around
+b1		db	0	;breadboard input one
+b2		db	0	;breadboard input two
+b3		db	0	;to go again to switch letters around
 switch		db	0
 
 countrot3rotates db	1	;# of times that rot has rotated
 countrot2rotates db	0	;# of times that rot has rotated
-countrot1rotates db 0	;# of times that rot has rotated
+countrot1rotates db	0	;# of times that rot has rotated
 
-ui1			db ?	;user input for letter to encrypt
+ui1		db ?	;user input for letter to encrypt
 count		db ?	;keeping count here
 arraypos	db ?	;position of given character in an array
 mapedchar	db ?	;the character throughout the program that is getting encrypted
@@ -92,11 +92,11 @@ simonsaysprompt		db "Press SPACE BAR to continue, or the ANY OTHER KEY to exit: 
 printarrayprompt	db "This array is: ",0
 notinalphabetprompt	db "That character is not in the alphabet.",0
 mapedtoprompt		db "Coresponding letter in that rotor is: ",0
-againprompt			db "Again? Press ",0
+againprompt		db "Again? Press ",0
 rot3conditionprompt	db "Enter Rot3 Initial Condition: ",0
 rot2conditionprompt	db "Enter Rot2 Initial Condition: ",0
 rot1conditionprompt	db "Enter Rot1 Initial Condition: ",0
-keepgoing				db "+++++++++PRESS ENTER OR PERIOD TO STOP INPUTING LETTERS++++++++++",0
+keepgoing		db "+++++++++PRESS ENTER OR PERIOD TO STOP INPUTING LETTERS++++++++++",0
 
 secondXPos db 0
 secondYPos db 0
@@ -109,18 +109,18 @@ secondYPos db 0
 ;setui1				;get user input
 ;checkarray			;will find arraypos
 ;printarray			;prints array
-;findmapedchar		;finds the position of the mapedchar					;
+;findmapedchar			;finds the position of the mapedchar
 ;gof				;sets condiiton of rotor taking into consideratoin rotations
 ;gob				;rotates back to original state
 ;encrypt			;CALL multiple procs to encrypt
 ;simonsays			;ask user if they'd like to go again
-;rot1function		;
-;rot2function		;
-;rot3function		;
-;revrot1function	;
-;revrot2function	;
-;revrot3function	;
-;reflectfunction	;
+;rot1function
+;rot2function
+;rot3function
+;revrot1function
+;revrot2function
+;revrot3function
+;reflectfunction
 	
 main PROC
 ;+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -138,9 +138,9 @@ MOV ESI, offset encrypted
 MOV ECX, 100
 
 L1:
-	MOV EAX,0
-	MOV [ESI],AL
-	inc ESI
+MOV EAX,0
+MOV [ESI],AL
+inc ESI
 LOOP L1
 
 CALL clrscr
