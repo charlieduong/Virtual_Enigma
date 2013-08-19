@@ -20,7 +20,7 @@ NOW HOW DO WE DECRYPT A MESSAGE WE RECEIVED??
 That means you need to know what order of the letters were and what the three rotors were set to. Once all that data is inputted into machine, just type in the encrypted message and the result should be the original message.
 
 LET’S DO A CONTROL TEST
- Set the order of the letters to: ABCDEZGHIJRLMNOPQKSTUVWXYF. So F & Z are switched as well as R & K
+<br />Set the order of the letters to: ABCDEZGHIJRLMNOPQKSTUVWXYF. So F & Z are switched as well as R & K
 <br />Next set the rotor 3 to: T, Set rotor 2 to: C, And Rotor 1 to: A
 <br />Now the message will be: THEALLIESAREPLANNINGSOMETHINGINJUNE
 <br />The encrypted message will be: AJQTGUJMNBTHOWLGLZRJCFXPSSNRPADIDKL
